@@ -19,8 +19,15 @@ var gateway = new braintree.BraintreeGateway({
 
 export const createProductController = async (req, res) => {
   try {
-    const { name, description, price, category, quantity, shipping } =
-      req.fields;
+    const {
+      name,
+      description,
+      price,
+      category,
+      quantity,
+      shipping,
+      isService,
+    } = req.fields;
     const { photo } = req.files;
     var tax = 200;
     //alidation
@@ -42,16 +49,27 @@ export const createProductController = async (req, res) => {
     }
 
     const products = new productModel({ ...req.fields, slug: slugify(name) });
-    const taxCalculate = (price) => {
-      if (price > 1000 && price <= 5000) {
-        return price * 0.12 + 200; // Tax PA
-      } else if (price > 5000) {
-        return price * 0.18 + 200; // Tax PB
+    console.log("testing2", products);
+    const taxCalculate = (products) => {
+      if (products.isService) {
+        if (products.price > 1000 && products.price <= 8000) {
+          return products.price * 0.1 + 100; // Tax SA
+        } else if (products.price > 8000) {
+          return products.price * 0.15 + 100; // Tax SB
+        } else {
+          return 100; // Tax SC
+        }
       } else {
-        return 200; // Tax PC
+        if (products.price > 1000 && products.price <= 5000) {
+          return products.price * 0.12 + 200; // Tax PA
+        } else if (products.price > 5000) {
+          return products.price * 0.18 + 200; // Tax PB
+        } else {
+          return 200; // Tax PC
+        }
       }
     };
-    products.tax = taxCalculate(products.price);
+    products.tax = taxCalculate(products);
 
     if (photo) {
       products.photo.data = fs.readFileSync(photo.path);

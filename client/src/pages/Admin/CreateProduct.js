@@ -3,7 +3,7 @@ import Layout from "./../../components/Layout/Layout";
 import AdminMenu from "./../../components/Layout/AdminMenu";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { Select } from "antd";
+import { Radio, Select } from "antd";
 import { useNavigate } from "react-router-dom";
 const { Option } = Select;
 
@@ -17,6 +17,11 @@ const CreateProduct = () => {
   const [quantity, setQuantity] = useState("");
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
+  const [service, setService] = useState(false);
+
+  const onChange = (e) => {
+    setService(e.target.value);
+  };
 
   //get all category
   const getAllCategory = async () => {
@@ -46,6 +51,8 @@ const CreateProduct = () => {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
+      productData.append("isService", service);
+      console.log("testing", productData);
       const { data } = axios.post(
         "/api/v1/product/create-product",
         productData
@@ -163,6 +170,12 @@ const CreateProduct = () => {
                   <Option value="0">No</Option>
                   <Option value="1">Yes</Option>
                 </Select>
+              </div>
+              <div className="mb-3">
+                <Radio.Group onChange={onChange} value={service}>
+                  <Radio value={false}>Product</Radio>
+                  <Radio value={true}>Service</Radio>
+                </Radio.Group>
               </div>
               <div className="mb-3">
                 <button className="btn btn-primary" onClick={handleCreate}>

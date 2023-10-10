@@ -7,7 +7,7 @@ const Footer = () => {
         <Link to="/about">About</Link>|<Link to="/contact">Contact</Link>|
         <Link to="/policy">Privacy Policy</Link>
       </p>
-      <h6 className="text-center">All Right Reserved &copy; DhairyaMahajan</h6>
+      <h6 className="text-center">All Right Reserved &copy; kickersmuse</h6>
     </footer>
   );
 };

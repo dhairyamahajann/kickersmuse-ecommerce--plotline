@@ -53,21 +53,25 @@ const ProductDetails = () => {
           <h6>Name : {product.name}</h6>
           <h6>Description : {product.description}</h6>
           <h6>
-            Price :
+            Price :{" "}
             {product?.price?.toLocaleString("en-US", {
               style: "currency",
               currency: "INR",
             })}
           </h6>
-          <h6>Tax : {product?.tax} INR</h6>
+          <h6>Tax : ₹{product?.tax}</h6>
           <h6>Category : {product?.category?.name}</h6>
 
           <select class="form-select" aria-label="Default select example">
             <label>Size</label>
             <option selected>Select your Size</option>
-            <option value="1">8</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="1">3.5 (Kids)</option>
+            <option value="2">4.5 (Kids)</option>
+            <option value="3">5</option>
+            <option value="4">6</option>
+            <option value="5">8</option>
+            <option value="6">9</option>
+            <option value="7">10</option>
           </select>
 
           <button class="btn btn-secondary ms-1">ADD TO CART</button>
@@ -75,7 +79,7 @@ const ProductDetails = () => {
       </div>
       <hr />
       <div className="row container similar-products">
-        <h4>Similar Products ➡️</h4>
+        <h4>Similar Products </h4>
         {relatedProducts.length < 1 && (
           <p className="text-center">No Similar Products found</p>
         )}

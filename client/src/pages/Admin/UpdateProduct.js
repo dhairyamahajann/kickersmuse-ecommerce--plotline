@@ -113,7 +113,7 @@ const UpdateProduct = () => {
             <div className="m-1 w-75">
               <Select
                 bordered={false}
-                placeholder="Select a category"
+                placeholder="Category"
                 size="large"
                 showSearch
                 className="form-select mb-3"
@@ -165,7 +165,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   value={name}
-                  placeholder="write a name"
+                  placeholder="Product Name"
                   className="form-control"
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -174,7 +174,7 @@ const UpdateProduct = () => {
                 <textarea
                   type="text"
                   value={description}
-                  placeholder="write a description"
+                  placeholder="Product Description"
                   className="form-control"
                   onChange={(e) => setDescription(e.target.value)}
                 />
@@ -184,7 +184,7 @@ const UpdateProduct = () => {
                 <input
                   type="number"
                   value={price}
-                  placeholder="write a Price"
+                  placeholder="Product Price"
                   className="form-control"
                   onChange={(e) => setPrice(e.target.value)}
                 />
@@ -193,7 +193,7 @@ const UpdateProduct = () => {
                 <input
                   type="number"
                   value={quantity}
-                  placeholder="write a quantity"
+                  placeholder="Available Quantity"
                   className="form-control"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
@@ -201,7 +201,7 @@ const UpdateProduct = () => {
               <div className="mb-3">
                 <Select
                   bordered={false}
-                  placeholder="Select Shipping "
+                  placeholder="Instant Shipping "
                   size="large"
                   showSearch
                   className="form-select mb-3"

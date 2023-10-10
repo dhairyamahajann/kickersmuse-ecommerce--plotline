@@ -220,7 +220,7 @@ export const getOrdersController = async (req, res) => {
 export const getAllOrdersController = async (req, res) => {
   try {
     const orders = await orderModel
-      .find({})
+      .find({ buyer: req.user._id })
       .populate("products", "-photo")
       .populate("buyer", "name")
       .sort({ createdAt: "-1" });

@@ -28,18 +28,6 @@ This full-stack web application is built using MongoDB, Express, React, and Node
 
 
 
-## Deployment
-
-To run the website click on the link
-
-[kickersmuse](https://fluffy-pinafore-slug.cyclic.app/)
-
-
-
-## Documentation
-
-[Documentation/kickersmuse](https://drive.google.com/file/d/1ho1ApH_l8fslMLNyfzWyTg5P2OG-kbe-/view?usp=sharing)
-
 
 ## Features
 
@@ -65,6 +53,7 @@ kickersmuse - Where Sneaker Reselling Meets Unparalleled Shopping Precision and 
 
 
 
+## Logo- kickersmuse
 ![Logo](https://github.com/dhairyamahajann/kickersmuse-webapp-plotline/assets/102297774/d2eaa66c-19e5-45d9-9dcd-e278d3069fda)
 
 
@@ -92,6 +81,18 @@ kickersmuse - Where Sneaker Reselling Meets Unparalleled Shopping Precision and 
 
 **About, Contact Us, & Privacy Policy page-**
 - You can access these pages from the footer.
+
+
+## Deployment
+
+To run the website click on the link
+
+[kickersmuse](https://fluffy-pinafore-slug.cyclic.app/)
+
+
+## Documentation
+
+[Documentation/kickersmuse](https://drive.google.com/file/d/1ho1ApH_l8fslMLNyfzWyTg5P2OG-kbe-/view?usp=sharing)
 
 
 ## Screenshots

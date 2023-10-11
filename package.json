@@ -12,7 +12,6 @@
   },
   "keywords": [],
   "author": "Dhairya Mahajan",
-  "license": "MIT",
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
     "bcrypt": "^5.1.1",
